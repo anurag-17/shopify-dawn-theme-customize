@@ -1,0 +1,119 @@
+<div class="home-main-slider">
+<div class="home-swiper page-width page-width-banner">
+
+<div class="u-partners-slide">
+  <div class="swiper mySwiper-home">
+        <div class="swiper-wrapper">
+           
+  {%- for block in section.blocks -%} 
+
+            <div class="swiper-slide">
+              <div>
+              <div class="main-sliders dekst-slid">
+                
+                <img src="{{ block.settings.slide-image | img_url: '' }}" loading="lazy">
+              
+              
+              </div>
+              
+
+              
+             
+              
+     
+           </div> 
+       
+         
+          </div>
+       
+          
+ {% endfor %} 
+ 
+        </div>
+     <div class="swiper-button-next swiper-button-black"></div>
+    <div class="swiper-button-prev swiper-button-black"></div>
+        <div class="swiper-pagination swiper-pagination-black"></div>
+    </div>
+
+  </div>
+
+</div>
+  
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Home Slider"
+  },
+  "class": "index-section",
+    "settings": [
+
+],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": {
+
+        "en": "Home Slider"
+
+      },
+      "settings": [
+
+{
+      "type": "image_picker",
+      "id": "slide-image",
+      "label": {
+        "en": "Slide Image"
+         }
+}
+
+       
+      ]
+
+ }
+
+  ],
+
+  "presets": [
+    {
+      "name": {
+        "en": "Slider"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+}
+
+{% endschema %}
+
+
+<link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0612/4643/9618/t/1/assets/swiper-bundle.min.css">  
+  
+  <script src="https://cdn.shopify.com/s/files/1/0612/4643/9618/t/1/assets/swiper-bundle.min.js"></script>
+
+<script>
+      var swiper = new Swiper(".mySwiper-home", {
+        cssMode: true,
+        centeredSlides: true,
+        
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+          pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+             keyboard: true,
+      });
+      
+
+</script>

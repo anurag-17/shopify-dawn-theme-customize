@@ -1,0 +1,53 @@
+
+<div class="improve-bg">
+<div class="improve-section page-width">
+
+
+
+<h2>{{ section.settings.heading-improve }}</h2>
+
+<p>{{ section.settings.paragraph-improve }}</p>
+
+
+
+
+</div>
+
+
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Improve Section"
+  },
+  "class": "index-section",
+  "settings": [
+  
+    {
+      "type": "text",
+      "id": "heading-improve",
+      "label": {
+        "en": "Heading"
+}
+},
+    {
+      "type": "richtext",
+      "id": "paragraph-improve",
+      "label": {
+         "en": "Text"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Improve Section"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,114 @@
+<div class="home-second-section page-width">
+
+
+ 
+  {%- for block in section.blocks -%}  
+ <div class="home-col">     
+      
+<div class="img-col">
+
+  <img src="{{ block.settings.categories-bg | img_url: '' }}">
+   
+   </div>
+
+  
+<div class="second-all-content">
+<h2>{{ block.settings.categories-heading }}</h2>
+
+<p>{{ block.settings.categories-paragraph }}</p>
+
+
+   <a href="{{ block.settings.categories_link }}" class="btn">
+          {{ block.settings.categories_label | escape }}
+        </a>
+  </div>   
+   
+ 
+    </div>   
+ {% endfor %} 
+    </div> 
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Home Second Section",
+    "settings": [
+
+ ],
+
+
+  "blocks": [
+    { 
+      "type": "quote",
+      "name": {
+
+        "en": "Collection"
+
+},
+      "settings": [
+       {
+      "type": "image_picker",
+      "id": "categories-bg",
+      "label": {
+        "en": "Image"
+         }
+    },
+    {
+      "type": "text",
+      "id": "categories-heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Image with text"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "categories-paragraph",
+      "label": {
+         "en": "Text"
+      }
+    },
+    {
+      "type": "text",
+      "id": "categories_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "categories_link",
+      "label": {
+        "en": "Button link"
+     }
+    }
+
+
+]
+
+     }
+     
+
+],
+"presets": [
+    {
+      "name": {
+        "en": "Home Second Section"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+
+
+
+  }
+{% endschema %}

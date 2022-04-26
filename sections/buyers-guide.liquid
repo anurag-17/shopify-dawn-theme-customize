@@ -1,0 +1,130 @@
+<div class="buyers-guide-section-main page-width">
+
+<h2>{{ section.settings.heading-guide-main }}</h2>
+  
+<div class="buyers-guide-section ">
+
+
+ 
+  {%- for block in section.blocks -%}  
+ <div class="buyers-guide-col">     
+      
+
+<a href="{{ block.settings.image_link }}">
+  <img src="{{ block.settings.guide-img | img_url: '' }}">
+
+ </a>   
+	<p>{{ block.settings.guide-date }}</p>
+ <a href="{{ block.settings.guide_head_link }}"> 
+	<h2>{{ block.settings.guide-heading }}</h2>
+   </a>
+  </div>   
+   
+ 
+    
+ {% endfor %} 
+  
+
+  
+ </div> 
+  
+     <a href="{{ section.settings.guide_viewall_link }}" class="btn buyers-btn">
+          {{ section.settings.guide_viewall_label | escape }}
+        </a>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Buyers Guide Section",
+    "settings": [
+   {
+      "type": "text",
+      "id": "heading-guide-main",
+      "label": {
+        "en": "Heading"
+      }    
+},
+{
+      "type": "text",
+      "id": "guide_viewall_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "guide_viewall_link",
+      "label": {
+        "en": "Button link"
+     }
+    }
+ ],
+  "blocks": [
+    { 
+      "type": "quote",
+      "name": {
+
+        "en": "Buyers Guide"
+
+},
+      "settings": [
+       {
+      "type": "image_picker",
+      "id": "guide-img",
+      "label": {
+        "en": "Image"
+         }
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": {
+        "en": "Image link"
+     }
+    },
+    {
+      "type": "richtext",
+      "id": "guide-date",
+      "label": {
+         "en": "Text"
+      }
+    },
+    {
+      "type": "text",
+      "id": "guide-heading",
+      "label": {
+        "en": "Heading"
+      }
+},
+    {
+      "type": "url",
+      "id": "guide_head_link",
+      "label": {
+        "en": "Guide link"
+     }
+    }
+
+]
+
+     }
+     
+
+],
+"presets": [
+    {
+      "name": {
+        "en": "Buyers Guide Section"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+
+
+
+  }
+{% endschema %}

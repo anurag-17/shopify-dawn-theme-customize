@@ -1,0 +1,104 @@
+<div class="home-third-section page-width">
+
+
+ 
+  {%- for block in section.blocks -%}  
+ <div class="home-col-1">     
+      
+<div class="img-col-1">
+
+  <img src="{{ block.settings.categories-bg-1 | img_url: '' }}">
+   
+   </div>
+
+  
+<div class="second-all-content-1">
+
+
+<p>{{ block.settings.categories-paragraph-1 }}</p>
+
+
+   <a href="{{ block.settings.categories_link-1 }}" class="btn">
+          {{ block.settings.categories_label | escape }}
+        </a>
+  </div>   
+   
+ 
+    </div>   
+ {% endfor %} 
+    </div> 
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Home Third Section",
+    "settings": [
+
+ ],
+
+
+  "blocks": [
+    { 
+      "type": "quote",
+      "name": {
+
+        "en": "Collection"
+
+},
+      "settings": [
+       {
+      "type": "image_picker",
+      "id": "categories-bg-1",
+      "label": {
+        "en": "Image"
+         }
+    },
+    {
+      "type": "richtext",
+      "id": "categories-paragraph-1",
+      "label": {
+         "en": "Text"
+      }
+    },
+    {
+      "type": "text",
+      "id": "categories_label",
+      "label": {
+        "en": "Button label"
+      }
+    },
+    {
+      "type": "url",
+      "id": "categories_link-1",
+      "label": {
+        "en": "Button link"
+     }
+    }
+
+
+]
+
+     }
+     
+
+],
+"presets": [
+    {
+      "name": {
+        "en": "Home Third Section"
+      },
+      "category": {
+        "en": "Image"
+      }
+    }
+  ]
+
+
+
+  }
+{% endschema %}
